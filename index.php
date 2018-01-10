@@ -11,7 +11,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+         echo 'Hello out there.......I live again';
+         
         include ('Student.php');
+        
+        $students = array();
         
         $first = new Student();
         $first->surname = "Doe";
@@ -34,7 +38,14 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
-        $students = array();
+        $third = new Student();
+        $third->surname = "So";
+        $third->first_name = "Tony";
+        $third->add_email('home','kappa123@gmail.com');
+        $third->add_grade(95);
+        $third->add_grade(80);
+        $third->add_grade(100);
+        $students['k123'] = $third;
         
         foreach($students as $student)
             echo $student->toString();
